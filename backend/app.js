@@ -5,6 +5,7 @@ import connectToDatabase from "./database/mongodb.js";
 import errorMiddleware from "./middlewares/error.middleware.js";
 import authRoutes from "./routes/auth.routes.js";
 import postRoutes from "./routes/posts.route.js";
+import commentsRoutes from "./routes/comments.route.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cookieParser());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/posts", postRoutes);
+app.use("/api/v1/comments", commentsRoutes);
 
 app.use(errorMiddleware);
 
